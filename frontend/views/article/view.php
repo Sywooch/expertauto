@@ -14,7 +14,7 @@ $this->registerMetaTag(['name' =>'description','content' => Meta::getDescription
 $this->registerMetaTag(['name' =>'keywords','content' => Meta::getKeywordsForArticle($article)]);
 ?>
 
-<div class="container-fluid" style="width: 100%;">
+<div class="container-fluid">
 <div class="row">
     <div class="column column-left">
 
