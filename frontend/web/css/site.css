@@ -16,7 +16,7 @@ header #logo { position: absolute; top: 4px; left: 56px; width: 444px; height: 8
 
 /*... NEW!! ..................*/
 
-.wrapped { display: block; max-width: 1100px; margin: 0 auto; }
+.wrapped { display: block; width: 1100px; margin: 0 auto; }
 
 .header { width: 100%; min-width: 1100px; height: 70px; background: url("../images/title-bgr.png") no-repeat center top #705858; }
 .header .logo { display: block; position: relative; width: 360px; height: 52px; margin: 0 auto; padding: 10px 0 19px; }
