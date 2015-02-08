@@ -1,0 +1,30 @@
+/yii
+/vendor
+/frontend/web/index.php
+/backend/web/index.php
+
+/backend/web/assets/*
+/backend/web/runtime/*
+/frontend/web/assets/*
+/frontend/web/runtime/*
+
+/frontend/web/photo/*
+/frontend/web/dealers/*
+/tests/*
+
+# phpstorm, netbeans, eclipse project files, thumbnail cache, Mac DS_Store Files
+.idea
+nbproject
+.buildpath
+.project
+.settings
+Thumbs.db
+.DS_Store
+*.rar
+
+# composer, phpunit
+composer.phar
+phpunit.phar
+/phpunit.xml
+
+
