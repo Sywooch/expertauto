@@ -15,7 +15,7 @@ $this->registerMetaTag(['name' =>'keywords','content' => Meta::getKeywordsForArt
 ?>
 
 <div class="container-fluid" style="width: 100%;">
-<div class="row">
+<div class="row" style="width: 100%;">
     <div class="column column-left">
 
         <div id="article_content">
