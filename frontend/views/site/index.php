@@ -3,7 +3,7 @@ $this->title = 'АвтоЭкспертиза';
 ?>
 
     <div id="mainpage-content">
-                        
+        
         <!-- MAINPAGE MAIN -->
         <div id="mainpage-main">
             <?= $this->render('_column_left', ['items' => $items]); ?>
@@ -16,8 +16,6 @@ $this->title = 'АвтоЭкспертиза';
                     <a href="/site/auth/?authclient=vkontakte" class="auth-link vkontakte"><span class="auth-icon vkontakte"></span><span class="auth-title">VKontakte</span></a>
                 </li>
             </div>
-
-
         </div><!-- end #mainpage-main -->
                     
         <!-- MAINPAGE RIGHT -->
@@ -30,5 +28,5 @@ $this->title = 'АвтоЭкспертиза';
             <?= $this->render('_column_right', ['items' => $items]); ?>
         </div><!-- end #sidebar -->
 
-    </div><!-- end #mainpage-content -->
     <div class="clearfix"></div>
+    </div><!-- end #mainpage-content -->
