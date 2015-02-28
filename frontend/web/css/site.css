@@ -66,11 +66,13 @@ body { width: 100%;
 
 
 /* thematic title - experiment */
-h2.thematic { position: relative; float: left; margin: 0 0 12px; font: 600 18px/1.1 open sans condensed,sans-serif; color: white; text-transform: uppercase; border-radius: 2px; }
-h2.thematic span.title { display: block; position: relative; padding: 3px 7px; z-index: 1; }
-h2.thematic span.arrow { position: absolute; width: 8px; height: 8px; bottom: -4px;
+h2.thematic { position: relative; float: left; margin: 0 0 12px; font: 600 17px/1.1 open sans condensed,sans-serif; color: white; text-transform: uppercase; border-radius: 2px; }
+h2.thematic span.title { display: block; position: relative; padding: 2px 6px; z-index: 1; }
+h2.thematic span.arrow { position: absolute; width: 6px; height: 6px; bottom: -3px;
     left: 10px; transform: rotate(45deg); z-index: 0; }
-.main-background { background-color: #ea6153; }
+.main-background { 
+    background-color: #ea6153;
+     }
 
 h2.thematic:before, h2.thematic:after { content: " "; display: table; }
 h2.thematic:after { clear: both; }
