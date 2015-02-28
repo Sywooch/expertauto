@@ -2,7 +2,10 @@
 a.decoration-none { text-decoration: none;}
 ol, ul { /*list-style: none outside none;*/ }
 
-body { width: 100%; background-color: #f5f5f5; color: #000; font: 14px/1.5 "Open Sans",sans-serif; }
+body { width: 100%; 
+    /*background-color: #f5f5f5; */
+    background-color: #fff; 
+    color: #000; font: 14px/1.5 "Open Sans",sans-serif; }
 
 /*... NEW!! ..................*/
 .wrapped { display: block; width: 1100px; margin: 0 auto; }
@@ -60,6 +63,19 @@ body { width: 100%; background-color: #f5f5f5; color: #000; font: 14px/1.5 "Open
 .column-left { width: 70%; }
 .column-right { width: 29%; }
 
+
+
+/* thematic title - experiment */
+h2.thematic { position: relative; float: left; margin: 0 0 12px; font: 600 18px/1.1 open sans condensed,sans-serif; color: white; text-transform: uppercase; border-radius: 2px; }
+h2.thematic span.title { display: block; position: relative; padding: 3px 7px; z-index: 1; }
+h2.thematic span.arrow { position: absolute; width: 8px; height: 8px; bottom: -4px;
+    left: 10px; transform: rotate(45deg); z-index: 0; }
+.main-background { background-color: #ea6153; }
+
+h2.thematic:before, h2.thematic:after { content: " "; display: table; }
+h2.thematic:after { clear: both; }
+/* /thematic */
+
 /* MAINPAGE */
 .sidebar h4 { margin: 0;  font: 700 14px/14px "Open Sans",​Arial,​sans-serif;}
 .sidebar h4 a { color: #333;}
@@ -68,8 +84,11 @@ body { width: 100%; background-color: #f5f5f5; color: #000; font: 14px/1.5 "Open
 .news_box .col-xs-9 { padding-left: 0;}
 
 #mainpage-content { display: block; width: 100%; margin: 30px 0 20px 0; }
+
 #mainpage-main { width: 545px; height: 100%; float: left; background: #fff; padding: 10px; }
-#mainpage-right { width: 220px; height: 100%; float: left; margin: 0 0 0 10px; border-radius: 5px; }
+#mainpage-right { width: 210px; height: 100%; float: left; margin: 0 10px 0 10px; border-radius: 5px; 
+    padding: 0 10px;
+}
 .sidebar { float: left; height: 100%; border-radius: 5px; }
 .sidebar.sidebar-mainpage { width: 280px; margin: 0 0 0 10px; }
 .sidebar.sidebar-article { margin-top: 20px; }
@@ -133,9 +152,22 @@ img.circle { display: block; border-radius: 50%; padding: 4px; background: #fff;
 .thumb_expert { margin-top: 10px;}
 
 /* MAINPAGE-RIGHT */
-#mainpage-right .block { width: 100%; margin: 0 0 10px; padding: 20px 20px; background: #fff; border-radius: 3px; box-shadow: 0 2px 2px rgba(0, 0, 0, 0.07); }
+#mainpage-right .block { width: 100%; margin: 0 0 10px;
+ /*padding: 20px 20px; */
+ padding: 20px 0 0 0; 
+
+    /*background: #fff; */
+    border-radius: 3px; 
+    /*box-shadow: 0 2px 2px rgba(0, 0, 0, 0.07); */
+}
 .column_headline { margin: 0; padding: 0; }
-.column_headline .box { background:  #fff; border-radius: 3px; margin: 0 0 20px; padding: 0 0 15px; }
+.column_headline .box { 
+    /*background:  #fff; */
+     background: #f8f8f8;
+
+    border-radius: 3px; padding: 0 0 15px;    
+    /*margin: 0 0 20px; */
+}
 .column_headline.grey .box { background:  #f5f5f5; }
 .column_headline .images { line-height: 0;}
 .column_headline img { border-radius: 3px 3px 0 0; }
@@ -143,8 +175,12 @@ img.circle { display: block; border-radius: 50%; padding: 4px; background: #fff;
 .column_headline .desc { padding: 0 10px; }
 
 /* SIDEBAR */
-.sidebar .block { width: 100%; margin: 0 0 20px; padding: 20px 14px; background: #fff;  border-radius: 3px; box-shadow: 0 2px 2px rgba(0, 0, 0, 0.07); }
-.sidebar.sidebar-mainpage .block { margin-bottom: 10px; }
+.sidebar .block { width: 100%; margin: 0 0 20px; padding: 20px 14px; 
+    /*background: #fff; */
+    background: #f8f8f8; 
+    /*box-shadow: 0 2px 2px rgba(0, 0, 0, 0.07); */
+    border-radius: 3px; 
+ }
 .sidebar .block.blue { /*background: #5a7ea0;*/ background: #999; }
 .sidebar .block.broun { background: #7d7166; }
 .sidebar .block.grey { background: #888; }

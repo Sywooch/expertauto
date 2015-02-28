@@ -3,17 +3,22 @@
     use common\models\MainpageItem;
 ?>                
 
-        <h2 class="columntitle"><?= $title ?></h2>
+        <!-- <h2 class="columntitle">$title</h2> -->
+        <h2 class="thematic main-background">
+            <span class="title"><?= $title ?></span>
+            <span class="arrow  main-background"></span>
+        </h2>
+        <div class="clearfix"></div>
         <?php
         $i = 0;
-        $f = 0; 
+        $f = 0;
         foreach($items as $k => $item) {
             if($item['type'] == $type && $i < $num) {
 
                 $link = ['article/view', 'category_slug' => $item['category_slug'], 'slug' => $item['slug']];
                 $img = Html::img('/photo/article/300x170/' .$item['image_src']); 
 
-                if($f % 2 == 0) { 
+                if($f % 2 == 0) {
                     echo '<div class="row">';
                 }
                 ?>
@@ -33,5 +38,5 @@
                 ++$i;
                 ++$f;
             }
-        } 
-        ?>                
+        }
+        ?> 

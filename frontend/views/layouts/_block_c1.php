@@ -3,8 +3,13 @@
     use common\models\MainpageItem;
 ?>                
 
-            <h2 class="columntitle" style="margin-bottom: 20px;"><?= $title ?></h2>
-            <?php
+        <!-- <h2 class="columntitle">$title</h2> -->
+        <h2 class="thematic main-background">
+            <span class="title"><?= $title ?></span>
+            <span class="arrow  main-background"></span>
+        </h2>
+        <div class="clearfix"></div>
+        <?php
             $i = 0;
             foreach($items as $k => $item) {
                 if($item['type'] == $type && $i < $num) {
@@ -16,7 +21,5 @@
                     <?php
                     ++$i;
                 }
-            } 
-            ?>         
-            
-                
+            }
+            ?>

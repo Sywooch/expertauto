@@ -27,7 +27,7 @@ AppAsset::register($this);
         <?= $this->render('_topmenu') ?>
     </div>
 
-    <div class="wrapped">    
+    <div class="wrapped">
         <?= Alert::widget() ?>
         <?= $content ?>
     </div>

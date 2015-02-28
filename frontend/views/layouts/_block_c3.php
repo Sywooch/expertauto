@@ -3,8 +3,8 @@
     use common\models\MainpageItem;
 ?>                
 
-            <h2 class="columntitle"><?= $title ?></h2>
-            <?php
+        <h2 class="columntitle"><?= $title ?></h2>
+        <?php
             $i = 0;
             foreach($items as $k => $item) {
                 if($item['type'] == $type && $i < $num) {
@@ -21,7 +21,6 @@
                     <?php
                     ++$i;
                 }
-            } 
-            ?>         
-            
+            }
+            ?>
                 
