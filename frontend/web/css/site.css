@@ -66,8 +66,8 @@ body { width: 100%;
 
 
 /* thematic title - experiment */
-h2.thematic { position: relative; float: left; margin: 0 0 12px; font: 600 17px/1.1 open sans condensed,sans-serif; color: white; text-transform: uppercase; border-radius: 2px; }
-h2.thematic span.title { display: block; position: relative; padding: 2px 6px; z-index: 1; }
+h2.thematic { position: relative; float: left; margin: 0 0 12px; font: 600 15px/1.1 open sans condensed,sans-serif; color: white; text-transform: uppercase; border-radius: 2px; }
+h2.thematic span.title { display: block; position: relative; padding: 2px 6px 3px; z-index: 1; }
 h2.thematic span.arrow { position: absolute; width: 6px; height: 6px; bottom: -3px;
     left: 10px; transform: rotate(45deg); z-index: 0; }
 .main-background { 
@@ -171,7 +171,7 @@ img.circle { display: block; border-radius: 50%; padding: 4px; background: #fff;
     /*margin: 0 0 20px; */
 }
 .column_headline.grey .box { background:  #f5f5f5; }
-.column_headline .images { line-height: 0;}
+.column_headline .images { padding: 10px; line-height: 0;}
 .column_headline img { border-radius: 3px 3px 0 0; }
 .column_headline .titles.center { text-align: center; }
 .column_headline .desc { padding: 0 10px; }
