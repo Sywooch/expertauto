@@ -230,7 +230,7 @@ ul.articles-list .title span { display: block; margin-bottom: 6px;}
 #article_content { 
     min-height: 900px; 
     margin-top: 20px; 
-    border-right: 2px solid #eee;
+    /*border-right: 2px solid #eee;*/
     /*background: #fff; */
     /*box-shadow: 2px 0 2px rgba(0, 0, 0, 0.06);*/
 }
