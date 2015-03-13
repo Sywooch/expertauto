@@ -169,7 +169,7 @@ img.circle { display: block; border-radius: 50%; padding: 4px; background: #fff;
     /*margin: 0 0 20px; */
 }
 .column_headline.grey .box {/* background:  #fafafa;*/ }
-.column_headline .images { padding: 2px; line-height: 0;}
+.column_headline .images { padding: 6px; line-height: 0;}
 .column_headline img { border-radius: 3px 3px 0 0; }
 .column_headline .titles.center { text-align: center; }
 .column_headline .desc { padding: 0 10px; }
@@ -229,8 +229,7 @@ ul.articles-list .title span { display: block; margin-bottom: 6px;}
     min-height: 900px; 
     margin-top: 20px; 
     background: #fefefe;
-    border: 1px solid #ddd;
-    /*border-right: 2px solid #eee;*/
+    border: 1px solid #eee;
     /*box-shadow: 2px 0 2px rgba(0, 0, 0, 0.06);*/
 }
 .article { padding: 0 30px 120px 30px; }
