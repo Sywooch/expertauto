@@ -159,7 +159,7 @@ img.circle { display: block; border-radius: 50%; padding: 4px; background: #fff;
     /*padding: 20px 20px; */
     padding: 0; 
     background: #fafafa;
-    border: 1px solid #ddd;
+    border: 1px solid #e5e5e5;
     border-radius: 3px; 
 }
 .column_headline { margin: 0; padding: 0; }
@@ -177,7 +177,7 @@ img.circle { display: block; border-radius: 50%; padding: 4px; background: #fff;
 /* SIDEBAR */
 .sidebar .block { width: 100%; margin: 0 0 20px; padding: 20px 14px; 
     background: #fafafa; 
-    border: 1px solid #ddd;
+    border: 1px solid #e5e5e5;
     border-radius: 3px; 
  }
 .sidebar .block.blue { /*background: #5a7ea0;*/ background: #999; }
