@@ -107,7 +107,7 @@ h2.thematic:after { clear: both; }
 .titles a { color: #333; text-decoration: none; }
 /*.titles a:hover { color: #ff8100; }*/
 .titles a:hover { color: #4d6e8d; }
-.block .desc { font-size: 13px; font-weight: 400; line-height: 1.2;  margin-bottom: 18px; }
+.block .desc { font-size: 13px; font-weight: 400; line-height: 1.2;  margin-bottom: 2px; }
 .block .desc.expert { margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #ddd; }
 
 .block .desc a, .block .desc a:visited { text-decoration: none; color: #000; }

@@ -3,8 +3,13 @@
     use yii\helpers\Url;
 ?>
 
-<h2 class="columntitle">Наши эксперты</h2>
-    
+<!-- <h2 class="columntitle">Наши эксперты</h2> -->
+<h2 class="thematic main-background" style="margin: 20px 0 20px 2px;">
+    <span class="title">Наши эксперты</span>
+    <span class="arrow  main-background"></span>
+</h2>
+<div class="clearfix"></div>
+
 <div class="row">
     <div class="col-xs-3">
             <!-- <div class="main_thumb_box"> -->
