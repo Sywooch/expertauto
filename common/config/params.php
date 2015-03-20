@@ -1,6 +1,6 @@
 <?php
 return [
-    'baseFrontendUrl' => 'http://autoexpert.crocusbit.ru',
+    'baseFrontendUrl' => 'http://expertauto.pro',
 
     'adminEmail' => 'admin@example.com',
     'supportEmail' => 'support@example.com',
