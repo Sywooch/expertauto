@@ -28,13 +28,12 @@
             </div><!-- .block -->
 
 
-            <!-- <div class="block"> -->
-                <?php // echo $this->render('_block_a1', [
-                      //  'items' => $items, 
-                      //  'title' => 'Двигатель', 
-                      //  'type'  => 'engine', 
-                      //  'num'   => 4
-                   // ]); 
-                    ?>
-            <!-- </div> -->
+            <div class="block">
+                <?= $this->render('_block_a1', [
+                       'items' => $items, 
+                       'title' => 'Двигатель', 
+                       'type'  => 'engine', 
+                       'num'   => 2
+                   ]); ?>
+            </div>
         </div>
