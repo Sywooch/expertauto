@@ -224,7 +224,7 @@ ul.articles-list .title span { display: block; margin-bottom: 6px;}
 
 /* ARTICLE VIEW */
 
-.breadcrumb { border-radius: 0; color: #111; font-size: 15px; padding: 8px 20px 8px 32px; }
+.breadcrumb { border-radius: 0; color: #111; font-size: 15px; padding: 8px 20px 8px 32px; background: #eee; }
 .breadcrumb > li + li:before {color: #444; }
 .breadcrumb li a { color: #444; border-bottom: 1px dotted #999;} 
 .breadcrumb li a:hover { text-decoration: none; } 
