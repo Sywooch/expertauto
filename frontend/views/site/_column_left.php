@@ -14,6 +14,8 @@
                     ]); ?>
             </div><!-- .block -->  
 
+            <div class="double-line"></div>
+
             <div class="block">
                 <?= $this->render('_block_a1', [
                         'items' => $items, 
@@ -23,10 +25,13 @@
                     ]); ?>
             </div><!-- .block -->  
 
+            <div class="double-line"></div>
+            
             <div class="block">
                 <?= $this->render('_experts') ?>
             </div><!-- .block -->
 
+            <div class="double-line"></div>
 
             <div class="block">
                 <?= $this->render('_block_a1', [
