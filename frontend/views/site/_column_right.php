@@ -25,7 +25,7 @@ use yii\helpers\Html;
             'items' => $items,
             'title' => 'Популярное',
             'type'  => 'popular',
-            'num'   => 6
+            'num'   => 9
         ]); ?>
 </div>
 
