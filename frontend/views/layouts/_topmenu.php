@@ -3,22 +3,10 @@ use yii\helpers\Html;
 ?>               
     <div class="wrapped">
         <ul class="ul-nav clearfix">
-            <li class="nav-item">
-                <a href="/">Главная</a>
-            </li>
-
-            <li class="nav-item root">
-                <a href="#">Экспертиза<span></span></a>
-                <ul>
-                    <li><?= Html::a('Кузов', ['article/index', 'category' => 'car-body']) ?></li>
-                    <li><?= Html::a('Двигатель', ['article/index', 'category' => 'engine']) ?></li>
-                    <li><?= Html::a('АКП', ['article/index', 'category' => 'automatic-gearbox']) ?></li>
-                </ul>
-            </li>
-
-            <li class="nav-item">
-                <a href="/">Нормативы</a>
-            </li>
+            <li class="nav-item"><a href="/">Главная</a></li>
+            <li class="nav-item"><?= Html::a('Кузов', ['article/index', 'category' => 'car-body']) ?></li>
+            <li class="nav-item"><?= Html::a('Двигатель', ['article/index', 'category' => 'engine']) ?></li>
+            <li class="nav-item"><?= Html::a('АКП', ['article/index', 'category' => 'automatic-gearbox']) ?></li>
 
             <li class="nav-item root">
                 <a href="#">Эксперты<span></span></a>
@@ -28,13 +16,6 @@ use yii\helpers\Html;
                     <li><?= Html::a('Александр Хрулев', ['expert/view', 'slug' => 'hrulev']) ?></li>
                 </ul>
             </li>
-
-            <li class="nav-item">
-                <?= Html::a('Форумы', ['topic/index']) ?>
-            </li>
-
-             <li class="nav-item">
-                <?= Html::a('Рейтинг', ['opinion/index']) ?>
-            </li>
+            <li class="nav-item"><?= Html::a('Форумы', ['topic/index']) ?></li>
         </ul>
     </div>
