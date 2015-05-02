@@ -7,14 +7,6 @@ $this->title = 'АвтоЭкспертиза';
         <!-- MAINPAGE MAIN -->
         <div id="mainpage-main">
             <?= $this->render('_column_left', ['items' => $items]); ?>
-
-            <div style="display: none;">
-                <?php // echo yii\authclient\widgets\AuthChoice::widget(['baseAuthUrl' => ['site/auth'], 'popupMode' => true,]) ?>
-                <li class="auth-client">
-                    <!-- <a href="/site/auth?authclient=vkontakte" class="auth-link vkontakte"> -->
-                    <a href="/site/auth/?authclient=vkontakte" class="auth-link vkontakte"><span class="auth-icon vkontakte"></span><span class="auth-title">VKontakte</span></a>
-                </li>
-            </div>
         </div><!-- end #mainpage-main -->
 
         <!-- MAINPAGE RIGHT -->

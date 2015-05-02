@@ -2,7 +2,7 @@
     use yii\helpers\Html;
     use common\models\MainpageItem;
 ?>                
-        <h2 class="columntitle" style="margin-left: 10px;"><?= $title ?></h2>
+        <h2 class="columntitle" style="margin-left: 6px;"><?= $title ?></h2>
         <ul class="news-list">
         <?php
             $i = 0;
