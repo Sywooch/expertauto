@@ -18,8 +18,8 @@
             <div class="block">
                 <?= $this->render('_block_a1', [
                         'items' => $items, 
-                        'title' => 'Кузов', 
-                        'type'  => 'car-body', 
+                        'title' => 'АКП', 
+                        'type'  => 'gearbox', 
                         'num'   => 2
                     ]); ?>
             </div><!-- .block -->  
@@ -28,8 +28,8 @@
             <div class="block">
                 <?= $this->render('_block_a1', [
                         'items' => $items, 
-                        'title' => 'АКП', 
-                        'type'  => 'gearbox', 
+                        'title' => 'Кузов', 
+                        'type'  => 'car-body', 
                         'num'   => 2
                     ]); ?>
             </div><!-- .block -->  
