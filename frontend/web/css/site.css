@@ -141,7 +141,7 @@ img.shadow { box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); }
 
 .news-list { list-style: disc; padding-left: 20px; margin-top: 20px; }
 /* news-list li { margin: 0 0 10px 0; font-size: 13px; line-height: 1.1em; }*/
-.news-list li { margin: 0 0 10px 0;  font: 700 14px/14px "Open Sans",​Arial,​sans-serif; }
+.news-list li { margin: 0 0 10px 0;  font: 400 13px/14px "Open Sans",​Arial,​sans-serif; }
 .news-list a { color: #444; }
 .news-list a:hover {  color: #4d6e8d; }
 
