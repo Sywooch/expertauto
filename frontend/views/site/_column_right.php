@@ -12,6 +12,10 @@ use yii\helpers\Html;
 </div>
 
 <div class="block">
+    <?= $this->render('/layouts/_block_adv') ?>
+</div>
+
+<div class="block">
     <?= $this->render('/layouts/_block_c2', [
             'items' => $items,
             'title' => 'Популярное',
