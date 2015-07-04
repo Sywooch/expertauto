@@ -7,7 +7,7 @@ use yii\helpers\Html;
             'items' => $items,
             'title' => 'Лента новостей',
             'type'  => 'news',
-            'num'   => 8
+            'num'   => 6
         ]); ?>
 </div>
 
