@@ -47,15 +47,15 @@ $this->title = 'АвтоЭкспертиза';
             </div><!-- /left sidebar -->
             
             <!-- right sidebar -->
-            <div class="col-md-3 col-xs-6 sidebar" style="margin-top: 14px;">
+            <div class="col-md-3 col-xs-6 sidebar" style="margin-top: -4px;">
                 <?php
+                echo $this->render('/layouts/_block_adv');
                 echo $this->render('/layouts/_block_c1', [
                     'items' => $items,
                     'title' => 'Лента новостей',
                     'type'  => 'news',
                     'num'   => 4
                 ]);
-                echo $this->render('/layouts/_block_adv');
                 echo $this->render('/layouts/_block_c2', [
                     'items' => $items,
                     'title' => 'Популярное',
