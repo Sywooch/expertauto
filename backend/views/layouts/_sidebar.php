@@ -51,12 +51,12 @@ $liClass = 'li-' .Yii::$app->controller->id .'-' .Yii::$app->controller->action-
                     </ul>
                 </li>
 
-                <li class="li-category-index"><?= HTML::a('<i class="fa fa-tasks"></i><span>Рубрики</span>', array('category/index')) ?></li>
+                <li class="li-category-index"><?= HTML::a('<i class="fa fa-tasks"></i><span>Рубрики</span>', ['category/index']) ?></li>
                 
-                <li class="li-tag-index"><?= HTML::a('<i class="fa fa-tag"></i><span>Тэги</span>', array('tag/index')) ?></li>
+                <li class="li-tag-index"><?= HTML::a('<i class="fa fa-tag"></i><span>Тэги</span>', ['tag/index']) ?></li>
 
-                <li class="li-author-index"><?= HTML::a('<i class="fa fa-user"></i><span>Авторы</span>', array('author/index')) ?></li>
-                <li class="li-dealer-index"><?= HTML::a('<i class="fa fa-truck"></i><span>Дилеры</span>', array('dealer/index')) ?></li>
+                <li class="li-author-index"><?= HTML::a('<i class="fa fa-user"></i><span>Авторы</span>', ['author/index']) ?></li>
+                <li class="li-dealer-index"><?= HTML::a('<i class="fa fa-truck"></i><span>Дилеры</span>', ['dealer/index']) ?></li>
 
 
                 <li class="menu-list"><a href=""><i class="fa fa-file-text"></i> <span>Первая стр.</span></a>
@@ -76,10 +76,11 @@ $liClass = 'li-' .Yii::$app->controller->id .'-' .Yii::$app->controller->action-
                 <li class="menu-list"><a href=""><i class="fa fa-cog"></i> <span>Настройки</span></a>
                     <ul class="sub-menu-list">
                         <li><a href="#">Общие</a></li>
+                        <li><?= HTML::a('Сбросить кэш', ['config/clear-cache']) ?></li>
                     </ul>
                 </li>
 
-                <li style="margin-top: 30px;"><?= HTML::a('<i class="fa fa-sign-in"></i><span>Выход</span>', array('site/logout')) ?></li>
+                <li style="margin-top: 30px;"><?= HTML::a('<i class="fa fa-sign-in"></i><span>Выход</span>', ['site/logout']) ?></li>
 
             </ul>
             <!--sidebar nav end-->
