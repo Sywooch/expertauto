@@ -2,13 +2,12 @@
     use yii\helpers\Html;
     use common\models\MainpageItem;
 ?>                
+    
+    <div class="box-common">
+        <div class="box-header">
+            <div class="title"><?= $title ?></div>
+        </div>
 
-        <!-- <h2 class="columntitle">$title</h2> -->
-        <h2 class="thematic main-background">
-            <span class="title"><?= $title ?></span>
-            <span class="arrow  main-background"></span>
-        </h2>
-        <div class="clearfix"></div>
         <?php
         $i = 0;
         $f = 0;
@@ -23,13 +22,13 @@
                 }
                 ?>
                 <div class="col-xs-6">
+                <div class="box-slim">
+                    <h3 class="block-heading"><?= Html::a($item['title'], $link) ?></h3>
                     <div class="images">
                         <?= Html::a($img, $link, ['class' => 'inner-shadow']); ?>
                     </div>
-                    <div class="titles center">
-                        <?= Html::a($item['title'], $link); ?>
-                    </div>
-                    <div class="desc"><?= Html::a(MainpageItem::briefText($item, 120), $link); ?></div>
+                    <div class="brief"><?= Html::a(MainpageItem::briefText($item, 120), $link); ?></div>
+                </div>
                 </div>
                 <?php
                 if($f % 2 != 0) {
@@ -38,5 +37,5 @@
                 ++$i;
                 ++$f;
             }
-        }
-        ?> 
+        } ?> 
+     </div>

@@ -1,6 +1,8 @@
 <?php
 use yii\helpers\Html;
 ?>
+<div class="row">
+    <div class="header">
         <div class="wrapped">
             <div class="menu-item user">
                 <div class="menu-item-btn">
@@ -29,3 +31,5 @@ use yii\helpers\Html;
                 </a>
             </div>
         </div>
+    </div>
+</div>

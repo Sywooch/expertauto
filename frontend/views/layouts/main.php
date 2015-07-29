@@ -13,6 +13,7 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,400italic&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
 
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
@@ -20,23 +21,24 @@ AppAsset::register($this);
 </head>
 <body>
     <?php $this->beginBody() ?>
-    <div class="header">
+    <div class="container-fluid">
         <?= $this->render('_header') ?>
     </div>
-    <div class="topmenu">
+
+    <div class="container-fluid">
         <?= $this->render('_topmenu') ?>
     </div>
 
-    <div class="wrapped">
-        <?= Alert::widget() ?>
-        <?= $content ?>
+    <div class="container content-wrap">
+        <div class="row">
+            <?= Alert::widget() ?>
+            <?= $content ?>
+        </div>
     </div>
 
-    <footer id="footer">
-        <div class="wrapped">
-            <?= $this->render('_footer'); ?>
-        </div>
-    </footer>
+    <div class="container-fluid">
+        <?= $this->render('_footer'); ?>
+    </div>
     <?= $this->render('/layouts/_modal_login'); ?>
     <?= $this->render('/layouts/_modal_signup'); ?>
     <?= $this->render('/layouts/_modal_search'); ?>
