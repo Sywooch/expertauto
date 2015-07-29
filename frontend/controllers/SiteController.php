@@ -114,7 +114,7 @@ class SiteController extends Controller
 
     public function actionIndex()
     {   
-        $items = MainpageItem::listToMainpage();
+        $items = MainpageItem::listToMainpage($cached = true, $expired = 86400);
         return $this->render('index', ['items' => $items]);
     }
 
