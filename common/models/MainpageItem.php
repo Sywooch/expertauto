@@ -82,6 +82,11 @@ class MainpageItem extends \yii\db\ActiveRecord
         }
     }
 
+    public static function clearCache()
+    {
+        $cacheManager = new yii\caching\FileCache;
+        $cacheManager->flush();
+    }
 
     public static function briefText($item, $max)
     {   
