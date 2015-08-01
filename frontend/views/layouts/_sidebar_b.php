@@ -1,7 +1,7 @@
 <?php
 use common\models\MainpageItem;
 
-if($this->beginCache('sidebar_bqs', ['duration' => 10]))  { 
+if($this->beginCache('sidebar_b', ['duration' => 10]))  { 
 
     $items = MainpageItem::listToMainpage();
     
