@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use common\models\MainpageItem;
 ?>                
 
-<div class="box-common" style="margin: 0 0 40px 0;">
+<div class="box-common" style="margin: 0 0 20px 0;">
     <h2 class="box-title"><span>Наши партнеры</span></h2>
 
     <a href="http://www.dinitrol.ru/">

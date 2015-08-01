@@ -315,7 +315,7 @@ ul.pagination li.disabled { display: none; }
 
 /*----  new design 2 ---- */
 
-.content-wrap { background: #fff; padding-top: 40px; padding-bottom: 50px; }
+.content-wrap { background: #fff; padding-top: 20px; padding-bottom: 50px; }
 
 .main-content {
     padding: 0 30px;
