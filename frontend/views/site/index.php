@@ -51,7 +51,7 @@ $this->title = 'АвтоЭкспертиза';
                 <?php
                 echo $this->render('/layouts/_block_adv');
                 echo $this->render('/layouts/_block_c1', [
-                    'items' => $items,
+                    'items' => $news,
                     'title' => 'Лента новостей',
                     'type'  => 'news',
                     'num'   => 4

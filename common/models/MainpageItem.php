@@ -62,10 +62,12 @@ class MainpageItem extends \yii\db\ActiveRecord
     }
 
 
-    public static function listToMainpage($cached = false, $expired = 86400)
+    public static function listToMainpage($typeFilter = null, $cached = false, $expired = 86400)
     {
-        $conn = \Yii::$app->db;
+        
+        $where = $typeFilter ? 'WHERE m.slug ' .$typeFilter : '';
         $orderBy = $cached ? 'RAND()' : 'mainpage_item.mainpage_id, mainpage_item.pos';
+        
         $q = 'SELECT  a.title, a.brief, a.slug, a.image_src,
                     SUBSTRING(a.content, 1, 300) as content,
                     m.slug as type, c.slug as category_slug
@@ -73,7 +75,10 @@ class MainpageItem extends \yii\db\ActiveRecord
            LEFT JOIN mainpage m ON m.id = mainpage_item.mainpage_id
            LEFT JOIN article a ON a.id = mainpage_item.article_id
            LEFT JOIN category c ON c.id = a.category_id
+           ' .$where .'
            ORDER BY ' .$orderBy;
+
+        $conn = \Yii::$app->db;
 
         if ($cached) {
             return $conn->createCommand($q)->cache($expired)->queryAll();
