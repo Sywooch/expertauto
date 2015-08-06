@@ -38,20 +38,20 @@ foreach ($items as  $item) {
         </div>
             
 
-        <div class="col-md-6">
+        <div class="col-md-6" style="padding-left: 30px;">
         <?php
         $i = 0;
         foreach($out as $item) {
 
             $link = ['article/view', 'category_slug' => $item['category_slug'], 'slug' => $item['slug']];
-            $img = Html::img('/photo/article/100x100/' .$item['image_src']); ?>
+            $img = Html::img('/photo/article/300x170/' .$item['image_src']); ?>
 
             <div class="news_box">
                 <div class="row">
-                    <div class="col-xs-3 img-compact">
+                    <div class="col-xs-4 img-compact">
                         <?= Html::a($img, $link); ?>
                     </div>
-                    <div class="col-xs-9">
+                    <div class="col-xs-8">
                         <h4 class="title title-e"><?= Html::a($item['title'], $link); ?></h4>
                     </div>
                 </div>

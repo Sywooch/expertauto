@@ -4,7 +4,7 @@
 ?>  
 
 <div class="box-common">
-    <div class="box-title"><span><?= $title ?></span></div>
+    <div class="box-title" style="margin-bottom: 20px;"><span><?= $title ?></span></div>
     <ul class="news-list">
     <?php
         $i = 0;

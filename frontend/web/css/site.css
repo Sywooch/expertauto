@@ -319,8 +319,8 @@ ul.pagination li.disabled { display: none; }
 
 .main-content {
     padding: 0 30px;
-    border-left: 1px solid #dbdbdb;
-    border-right: 1px solid #dbdbdb;
+    border-left: 2px solid #dbdbdb;
+    border-right: 2px solid #dbdbdb;
 }
 
 .sidebar {  padding-right: 30px; padding-left: 20px; }
@@ -339,7 +339,7 @@ ul.pagination li.disabled { display: none; }
     text-transform: uppercase;  }  
 .title-c { font-size: 20px; margin-top: 10px; }  
 .title-d { margin-left: 8px; }  
-.title-e { font-size: 18px; margin-left: 8px; }  
+.title-e { font-size: 17px; margin-left: -5px; }  
 
 
 .box-slim { margin: 0 0 20px 0; }

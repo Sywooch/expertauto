@@ -14,13 +14,13 @@ $this->title = 'АвтоЭкспертиза';
                            'items' => $items, 
                            'title' => 'Двигатель', 
                            'type'  => 'engine', 
-                           'num'   => 4
+                           'num'   => 5
                        ]); 
                     echo $this->render('_block_a2', [
                             'items' => $items, 
                             'title' => 'АКП', 
                             'type'  => 'gearbox', 
-                            'num'   => 4
+                            'num'   => 5
                         ]);
                     echo $this->render('_block_a2', [
                             'items' => $items, 
