@@ -115,7 +115,7 @@ class SiteController extends Controller
     public function actionIndex()
     {   
         $items = MainpageItem::listToMainpage($typeFilter = ' != \'news\'', $cached = true, $expired = 86400);
-        $news = MainpageItem::listToMainpage($typeFilter = ' = \'news\'', $cached = true, $expired = 86400);
+        $news = MainpageItem::listToMainpage($typeFilter = ' = \'news\'', $cached = false);
 
         return $this->render('index', compact('items', 'news'));
     }
