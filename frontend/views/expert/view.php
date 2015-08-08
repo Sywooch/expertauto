@@ -43,6 +43,18 @@ $fullName = $item['firstname'] .' ' .$item['lastname'];
             </article>
         </div><!-- #article_content -->
 
+        <section id="articles-list">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                <?php
+                if(count($articles) > 0 ) { 
+                    echo $this->render('/article/_list', ['items' => $articles, 'pages' => $pagination]);
+                } ?>
+             </div>
+            </div>
+        </section>
+
+
     </div><!-- .column-left -->
 
     <div class="column column-right">

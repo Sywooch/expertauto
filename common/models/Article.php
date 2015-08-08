@@ -223,7 +223,7 @@ class Article extends \yii\db\ActiveRecord
             $query->andWhere("article.title LIKE :search OR article.content LIKE :search", [':search' => "%$search%"]);
         }
         if(!$order_by) {
-            $orderBy = 'created_at DESC';
+            $orderBy = 'article.created_at DESC';
         }     
 
         $query->orderBy($orderBy)->asArray();
@@ -264,6 +264,45 @@ class Article extends \yii\db\ActiveRecord
         $paginator = self::createPaginator($query);
         return  $query->offset(self::$pages->offset)->limit(self::$pages->limit)->all();
     } 
+
+
+    // TODO  new 
+    public static function getListQuery($g)
+    {
+        $getMap = [
+            'category_id' => 'category_id',
+            'category' => 'category.slug',
+            'status' => 'status',
+            'author_id' => 'author.id',
+            'author' => 'author.slug',
+        ];
+
+        $query = self::queryArticleFull($compact = true);
+
+        foreach($g as $k => $v) {
+            if (isset($getMap[$k])) {
+                $query->andFilterWhere([$getMap[$k] => $v]);
+            }
+        }
+
+        if (isset($g['tag'])) {
+            $query
+                ->leftJoin('tagging', 'tagging.article_id = article.id')
+                ->leftJoin('tag', 'tag.id = tagging.tag_id')
+                ->andWhere(['tag.slug' => $g['tag']]);
+        }
+
+        if (isset($g['search'])) {
+            $query->andFilterWhere(['like', 'LOWER(CONCAT(article.title, article.content))', strtolower($g['search'])]);
+        }   
+
+        $orderBy = isset($g['order_by']) ? $g['order_by'] : 'article.created_at';
+        if (isset($g['sort']) && $g['sort'] == 'desc') {
+            $orderBy .= ' DESC';
+        }
+        return $query->orderBy($orderBy);
+    }
+
 
 
     public static function contentPrepareToTextAreaFormat($string)

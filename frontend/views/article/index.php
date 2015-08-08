@@ -2,7 +2,6 @@
 
 use yii\helpers\Html;
 use common\models\Meta;
-use common\models\Image;
 
 
 // TODO for tag, authors and search list
@@ -22,42 +21,10 @@ $this->title = $maincategory_name  .Meta::$titleSuffix;
 
             <section id="articles-list">
             <?php
-            if(count($items) > 0 ) { ?>
-                <ul class="articles-list">
-                <?php
-                foreach($items as $item) {
-
-                    $link = ['article/view',
-                        'category_slug' => $item['category_slug'],
-                        'slug' => $item['slug']
-                        ];
-                    
-                    $img = Html::img(Image::getImageSrc('/photo/article/300x170/' .$item['image_src'], '/images/blank-image.png'));
-                    ?>
-                    <li>
-                    <div class="row">
-                        <div class="col-md-3">
-                        <!-- <div class="thumb"> -->
-                            <?= Html::a($img, $link); ?>
-                        </div>
-
-                        <div class="col-md-8 title">
-                        <!-- <div class="title"> -->
-                            <span><?= $item['maincategory_name'] .' / ' .$item['category_name'] ?></span>
-                            <?= Html::a($item['title'], $link); ?>
-                        </div>
-                        <!-- <div class="clearfix"></div> -->
-                    </div>
-                    </li>
-                <?php  
-                } ?>
-
-                </ul>
-                <?php
-                if($pages->pageCount > 1) {
-                    echo \yii\widgets\LinkPager::widget(['pagination' => $pages]);
-                } ?>
-            <?php }  ?>   
+            if(count($items) > 0 ) { 
+                echo $this->render('_list', ['items' => $items, 'pages' => $pages]);
+            } 
+            ?>
             </section>
         </div><!-- #article_content -->
     </div><!-- .column-left -->
