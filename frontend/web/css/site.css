@@ -200,7 +200,7 @@ font: 14px "Open Sans",​Arial,​sans-serif; }
 #article_content { 
     min-height: 900px; 
     background: #fff;
-    border-right: 1px solid #eee;
+    border-right: 2px solid #eee;
     /*box-shadow: 0 4px 4px rgba(0, 0, 0, 0.07);*/
 }
 .article { padding: 0 30px 120px 30px; }
@@ -315,7 +315,7 @@ ul.pagination li.disabled { display: none; }
 
 /*----  new design 2 ---- */
 
-.content-wrap { background: #fff; padding-top: 20px; padding-bottom: 50px; }
+.content-wrap { background: #fff; padding-top: 30px; padding-bottom: 50px; }
 
 .main-content {
     padding: 0 30px;
@@ -324,7 +324,7 @@ ul.pagination li.disabled { display: none; }
 }
 
 .sidebar {  padding-right: 30px; padding-left: 20px; }
-.sidebar-article { margin-top: 30px; }
+.sidebar-article { margin-top: 20px; }
 
 .title {  
     margin: 0 0 10px 0;

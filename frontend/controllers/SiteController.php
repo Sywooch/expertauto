@@ -2,7 +2,6 @@
 namespace frontend\controllers;
 
 use Yii;
-use common\models\MainpageItem;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
@@ -10,11 +9,14 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 
-use yii\authclient\OAuth2;
+// use yii\authclient\OAuth2;
 use yii\authclient\AuthAction;
 use yii\authclient\ClientInterface;
+
 use common\models\Auth;
 use common\models\Person;
+use common\models\MainpageItem;
+use common\models\Article;
 
 
 class SiteController extends Controller
@@ -114,8 +116,8 @@ class SiteController extends Controller
 
     public function actionIndex()
     {   
-        $items = MainpageItem::listToMainpage($typeFilter = ' != \'news\'', $cached = true, $expired = 86400);
-        $news = MainpageItem::listToMainpage($typeFilter = ' = \'news\'', $cached = false);
+        $items = MainpageItem::listToMainpage($typeFilter = null, $cached = true, $expired = 86400);
+        $news = Article::getNews(5);
 
         return $this->render('index', compact('items', 'news'));
     }

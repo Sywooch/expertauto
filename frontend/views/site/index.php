@@ -2,7 +2,7 @@
 $this->title = 'АвтоЭкспертиза';
 ?>
             <!-- main content -->
-            <div class="col-md-7 col-md-push-2 col-xs-12 main-content">
+            <div class="col-md-7 col-md-push-2 col-xs-12 main-content" style="margin-top: px;">
                 <!-- slider -->
                 <!-- <div id="slider_box">
                     <?php // $this->render('_slider', ['items' => $items]); ?>
@@ -34,7 +34,7 @@ $this->title = 'АвтоЭкспертиза';
             </div><!-- /main content -->
 
             <!-- left sidebar -->
-            <div class="col-md-2 col-md-pull-7 col-xs-6 sidebar">
+            <div class="col-md-2 col-md-pull-7 col-xs-6 sidebar"  style="margin-top: 0px;">
                 <?php
                 echo $this->render('_categories');
                 echo $this->render('_block_b1', [
@@ -47,7 +47,7 @@ $this->title = 'АвтоЭкспертиза';
             </div><!-- /left sidebar -->
             
             <!-- right sidebar -->
-            <div class="col-md-3 col-xs-6 sidebar" style="margin-top: -4px;">
+            <div class="col-md-3 col-xs-6 sidebar">
                 <?php
                 echo $this->render('/layouts/_block_adv');
                 echo $this->render('/layouts/_block_c1', [

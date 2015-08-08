@@ -171,6 +171,19 @@ class Article extends \yii\db\ActiveRecord
     }
     
 
+    public static function getNews($limit = 10, $category_slug = 'novosti')
+    {
+        return self::find()
+            ->select('article.title, article.slug, category.slug as category_slug')
+            ->leftJoin('category', 'category.id = article.category_id')
+            ->where(['category.slug' => $category_slug, 'article.state' => self::STATE_ACTIVE ])
+            ->orderBy('article.created_at DESC')
+            ->limit($limit)
+            ->all();
+    }
+
+
+
     public static function findById($id)
     {   
         $article = static::queryArticleFull()
@@ -236,11 +249,11 @@ class Article extends \yii\db\ActiveRecord
         }
 
         if(!$order_by = Yii::$app->request->get('order_by')) {
-            $orderBy = 'created_at DESC';
+            $orderBy = 'article.created_at DESC';
         } 
 
         if($search = Yii::$app->request->get('search')) {
-            $search =trim($search);
+            $search = trim($search);
             $query->andWhere("article.title LIKE :search OR article.content LIKE :search", [':search' => "%$search%"]);
             // $query->andWhere(['like', 'title', trim($search)]);
         }

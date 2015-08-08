@@ -65,7 +65,7 @@ class MainpageItem extends \yii\db\ActiveRecord
     public static function listToMainpage($typeFilter = null, $cached = false, $expired = 86400)
     {
         
-        $where = $typeFilter ? 'WHERE m.slug ' .$typeFilter : '';
+        $where = $typeFilter ? "WHERE m.slug = '$typeFilter'" : '';
         $orderBy = $cached ? 'RAND()' : 'mainpage_item.mainpage_id, mainpage_item.pos';
         
         $q = 'SELECT  a.title, a.brief, a.slug, a.image_src,
