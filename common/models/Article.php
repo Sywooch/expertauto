@@ -234,7 +234,7 @@ class Article extends \yii\db\ActiveRecord
 
     public static function listAll()
     {
-        $query = static::queryArticleFull($compact = true);
+        $query = self::queryArticleFull($compact = true);
 
         if($category_id = Yii::$app->request->get('category_id')) {
             $query->andWhere(['category.id' => $category_id]);
@@ -249,7 +249,7 @@ class Article extends \yii\db\ActiveRecord
         }
 
         if(!$order_by = Yii::$app->request->get('order_by')) {
-            $orderBy = 'article.created_at DESC';
+            $orderBy = 'article.id DESC';
         } 
 
         if($search = Yii::$app->request->get('search')) {
@@ -261,8 +261,8 @@ class Article extends \yii\db\ActiveRecord
             ->orderBy($orderBy)
             ->asArray();
     
-        $paginator = static::createPaginator($query);
-        return  $query->offset(static::$pages->offset)->limit(static::$pages->limit)->all();
+        $paginator = self::createPaginator($query);
+        return  $query->offset(self::$pages->offset)->limit(self::$pages->limit)->all();
     } 
 
 
