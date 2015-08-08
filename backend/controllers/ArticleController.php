@@ -4,6 +4,7 @@ namespace backend\controllers;
 
 use backend\controllers\AdminController;  
 use Yii;
+use yii\data\ActiveDataProvider;
 use common\models\Article;
 use common\models\Tag;
 use common\models\Tagging;
@@ -33,25 +34,24 @@ class ArticleController extends AdminController
 
 
     public function actionIndex()
-    {   
-        $items = Article::listAll();
-        if (!$items)  $items = [];
+    {
+        $query = Article::getListQuery(Yii::$app->request->get());
+        $dataProvider = new ActiveDataProvider(['query' => $query]);
+        $items = $dataProvider->getModels();
 
         if(Yii::$app->request->isAjax) {
             Yii::$app->response->format = 'json';
             return $items;
-        
         }  else {
             \common\models\Utilities::setBackUrl(Yii::$app->request->url);
-            $pages = Article::$pages;
-            return $this->render('index', compact('items', 'pages'));
-        } 
-
+            $pagination = $dataProvider->pagination;
+            return $this->render('index', compact('items', 'pagination'));
+        }
     }
 
 
     public function actionMedia($id)
-    {   
+    {
         $article = $this->findModel($id);
         $images = Article::getImageArrayByArticleId($id);
         return $this->render('media', compact('article', 'images'));
@@ -59,7 +59,7 @@ class ArticleController extends AdminController
 
 
     public function actionUpdate($id = null)
-    {   
+    {
         if($id) {
             $model = $this->findModel($id);
             $taggings = Tagging::listForArticle($id);
@@ -67,7 +67,7 @@ class ArticleController extends AdminController
             $model = new Article();
             $taggings = [];
         }
-        
+
         if ($model->load(Yii::$app->request->post())) {
 
             if($image_src = $this->createMainImage($model)) {
@@ -79,13 +79,12 @@ class ArticleController extends AdminController
                 return $this->redirect(['update', 'id' => $model->id]);
                 // return $this->refresh();
             }
-        } 
+        }
 
         $model->content = Article::contentPrepareToTextAreaFormat($model->content);
         $unusedTags = Tag::findUnusedTags($taggings);
         return $this->render('update', compact('model', 'taggings','unusedTags'));
     }
-
 
 
     private function createMainImage($model)

@@ -232,49 +232,15 @@ class Article extends \yii\db\ActiveRecord
     }
 
 
-    public static function listAll()
-    {
-        $query = self::queryArticleFull($compact = true);
-
-        if($category_id = Yii::$app->request->get('category_id')) {
-            $query->andWhere(['category.id' => $category_id]);
-        }
-
-        if($category_id = Yii::$app->request->get('category_slug')) {
-            $query->andWhere(['category.slug' => $category_slug]);
-        }
-
-        if($author_id = Yii::$app->request->get('author_id')) {
-            $query->andWhere(['author_id' => $author_id]);
-        }
-
-        if(!$order_by = Yii::$app->request->get('order_by')) {
-            $orderBy = 'article.id DESC';
-        } 
-
-        if($search = Yii::$app->request->get('search')) {
-            $search = trim($search);
-            $query->andWhere("article.title LIKE :search OR article.content LIKE :search", [':search' => "%$search%"]);
-            // $query->andWhere(['like', 'title', trim($search)]);
-        }
-        $query
-            ->orderBy($orderBy)
-            ->asArray();
-    
-        $paginator = self::createPaginator($query);
-        return  $query->offset(self::$pages->offset)->limit(self::$pages->limit)->all();
-    } 
-
-
-    // TODO  new 
+   
     public static function getListQuery($g)
     {
         $getMap = [
             'category_id' => 'category_id',
             'category' => 'category.slug',
-            'status' => 'status',
             'author_id' => 'author.id',
             'author' => 'author.slug',
+            'state' => 'state',
         ];
 
         $query = self::queryArticleFull($compact = true);
@@ -296,10 +262,8 @@ class Article extends \yii\db\ActiveRecord
             $query->andFilterWhere(['like', 'LOWER(CONCAT(article.title, article.content))', strtolower($g['search'])]);
         }   
 
-        $orderBy = isset($g['order_by']) ? $g['order_by'] : 'article.created_at';
-        if (isset($g['sort']) && $g['sort'] == 'desc') {
-            $orderBy .= ' DESC';
-        }
+        $orderBy = isset($g['order_by']) ? $g['order_by'] : 'article.created_at DESC';
+        // if (isset($g['sort']) && $g['sort'] == 'asc') { $orderBy .= ' ASC'; }
         return $query->orderBy($orderBy);
     }
 

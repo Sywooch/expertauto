@@ -15,10 +15,10 @@ $this->registerJsFile('js/articles.js', ['depends' => [AppAsset::className()]]);
         <div class="col-md-12">
             <?= $this->render('/layouts/toppanel/articles') ?>
             <div class="panel panel-common clearfix">
-            
+
             <div class="toggle-form">
-                <?= $this->render('/layouts/_form_search') ?>   
-            </div>    
+                <?= $this->render('/layouts/_form_search') ?>
+            </div>
             <!-- <header class="panel-heading">Статьи</header> -->
 
             <table class="table table-striped">
@@ -32,8 +32,8 @@ $this->registerJsFile('js/articles.js', ['depends' => [AppAsset::className()]]);
                 </thead>
                 <tbody>
                 <?php
-                
-             if($items) {                   
+
+             if($items) {
                 foreach($items as $item) {
                 ?>
                     <tr>
@@ -42,16 +42,16 @@ $this->registerJsFile('js/articles.js', ['depends' => [AppAsset::className()]]);
                         <td class="place-state">
                             <span id="article-state-<?= $item['id'] ?>-<?= $item['state'] ?>" class="dot <?= ($item['state'] ==1) ? 'active' : 'no-active'; ?>"></span>
                         </td>
-                        <td><?= HTML::a('<div class="icon_delete"></div>', ['article/delete', 'id' => $item['id']], ['class' => 'confirm-delete']); ?></td>  
+                        <td><?= HTML::a('<div class="icon_delete"></div>', ['article/delete', 'id' => $item['id']], ['class' => 'confirm-delete']); ?></td>
                     </tr>
-            <?php } ?> 
-                </tbody>       
+            <?php } ?>
+                </tbody>
             </table>
 
             <?php
-            if($pages->pageCount > 1) {
-                echo \yii\widgets\LinkPager::widget(['pagination' => $pages]);
-            } 
+            if($pagination->pageCount > 1) {
+                echo \yii\widgets\LinkPager::widget(['pagination' => $pagination]);
+            }
         }
         ?>
 

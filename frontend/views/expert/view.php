@@ -22,7 +22,7 @@ $fullName = $item['firstname'] .' ' .$item['lastname'];
             ]); ?>
             </section>
 
-            <article class="article">
+            <article class="article" style="padding-bottom: 30px;">
                 <div style="margin: 30px 50px 0 30px;">
                 
                     <h1 style="margin-bottom: 50px;">Резюме эксперта: <?= $fullName ?></h1>
@@ -41,20 +41,25 @@ $fullName = $item['firstname'] .' ' .$item['lastname'];
                     ?>     
                 </div>
             </article>
-        </div><!-- #article_content -->
 
-        <section id="articles-list">
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1">
+            <section>
+                <div class="row" style="margin: 30px 0 0 20px;">
+                <div class="col-md-11">
                 <?php
-                if(count($articles) > 0 ) { 
-                    echo $this->render('/article/_list', ['items' => $articles, 'pages' => $pagination]);
-                } ?>
-             </div>
-            </div>
-        </section>
+                if(count($articles) > 0 ) { ?>
+
+                    <div class="box-header" style="margin-left: 24px;">
+                        <span>Публикации эксперта</span>
+                    </div>
+
+                    <?= $this->render('/article/_list', ['items' => $articles, 'pagination' => $pagination]) ?>
+                <?php } ?>
+                </div>
+                </div>
+            </section>
 
 
+        </div><!-- #article_content -->
     </div><!-- .column-left -->
 
     <div class="column column-right">

@@ -4,6 +4,8 @@ namespace frontend\controllers;
 use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use yii\data\ActiveDataProvider;
+
 use common\models\Article;
 use common\models\Tagging;
 use yii\filters\VerbFilter;
@@ -25,14 +27,17 @@ class ArticleController extends Controller
     }
 
 
-    public function actionIndex($category = null, $tag = null, $author = null, $search = null, $order_by = null)
+    public function actionIndex()
     {  
-        Article::$isActiveOnly = true;
-        Article::setItemsPerPage(10);
-        $items = Article::listByAny($category, $tag, $author, $search, $order_by);
-        $pages = Article::$pages;
-        
-        return $this->render('index', compact('items', 'pages'));
+        $query = Article::getListQuery(Yii::$app->request->get())
+            ->andWhere(['article.state' => 1]);
+        $dataProvider = new ActiveDataProvider(['query' => $query, 'pagination' => ['pageSize' => 10]]);
+
+        return $this->render('index', [
+                'items' => $dataProvider->getModels(),
+                'pagination' => $dataProvider->pagination,
+            ]);
+
     }
 
 
@@ -50,14 +55,5 @@ class ArticleController extends Controller
         }
     }
 
-
-    // protected function findModel($id)
-    // {
-    //     if (($model = Article::findOne($id)) !== null) {
-    //         return $model;
-    //     } else {
-    //         throw new NotFoundHttpException('The requested page does not exist.');
-    //     }
-    // }
 
 }

@@ -22,7 +22,7 @@ use common\models\Image;
                             <?= Html::a($img, $link); ?>
                         </div>
                         <div class="col-md-8 title">
-                            <span><?= $item['maincategory_name'] .' / ' .$item['category_name'] ?></span>
+                            <span><?= $item['maincategory_name'] .' / '.$item['category_name'] ?></span>
                             <?= Html::a($item['title'], $link); ?>
                         </div>
                     </div>
@@ -31,6 +31,6 @@ use common\models\Image;
                 
                 </ul>
                 <?php
-                if($pages->pageCount > 1) {
-                    echo \yii\widgets\LinkPager::widget(['pagination' => $pages]);
+                if($pagination->pageCount > 1) {
+                    echo \yii\widgets\LinkPager::widget(['pagination' => $pagination]);
                 } 

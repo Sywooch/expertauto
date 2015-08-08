@@ -22,7 +22,7 @@ $this->title = $maincategory_name  .Meta::$titleSuffix;
             <section id="articles-list">
             <?php
             if(count($items) > 0 ) { 
-                echo $this->render('_list', ['items' => $items, 'pages' => $pages]);
+                echo $this->render('_list', ['items' => $items, 'pagination' => $pagination]);
             } 
             ?>
             </section>

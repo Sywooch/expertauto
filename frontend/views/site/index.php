@@ -50,7 +50,7 @@ $this->title = 'АвтоЭкспертиза';
             <div class="col-md-3 col-xs-6 sidebar">
                 <?php
                 echo $this->render('/layouts/_block_adv');
-                echo $this->render('/layouts/_block_c1', [
+                echo $this->render('/layouts/_block_news', [
                     'items' => $news,
                     'title' => 'Лента новостей',
                     'type'  => 'news',

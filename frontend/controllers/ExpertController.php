@@ -20,7 +20,7 @@ class ExpertController extends Controller
         $q = [];
         $q['author'] = $slug;
         $query = Article::getListQuery($q);
-        $dataProvider = new ActiveDataProvider(['query' => $query]);
+        $dataProvider = new ActiveDataProvider(['query' => $query, 'pagination' => ['pageSize' => 10]]);
 
         return $this->render('view', [
                 'item' => $item,
