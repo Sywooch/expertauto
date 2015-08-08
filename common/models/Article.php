@@ -157,15 +157,15 @@ class Article extends \yii\db\ActiveRecord
     {   
         $select =  $compact ? 'article.id, article.state, article.title, article.slug, article.brief, article.image_src' : 'article.*';
 
-        $query = static::find()
+        $query = self::find()
             ->select($select .', author.firstname, author.lastname, author.job, author.slug as author_slug, category.name as category_name, maincategory.name as maincategory_name, category.slug as category_slug, maincategory.slug as maincategory_slug')
             ->leftJoin('category', 'category.id = article.category_id')
             ->leftJoin('category maincategory', 'maincategory.id = category.parent_id')
             ->leftJoin('author', 'author.id = article.author_id');
 
         // если выбрать только активные: 
-        if(static::$isActiveOnly === true)  {
-            $query->andWhere(['article.state' => static::STATE_ACTIVE ]);
+        if(self::$isActiveOnly === true)  {
+            $query->andWhere(['article.state' => self::STATE_ACTIVE ]);
         }
         return $query;
     }

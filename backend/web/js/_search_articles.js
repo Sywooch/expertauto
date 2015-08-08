@@ -4,7 +4,7 @@
         e.preventDefault();
         var data = $('#form-search').serialize();
 
-        $.get('/article/search', 
+        $.get('/article/index', 
             data,
             function(data) {    
                 var foundList = $('#found-list');

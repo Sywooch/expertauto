@@ -34,37 +34,19 @@ class ArticleController extends AdminController
 
     public function actionIndex()
     {   
-        \common\models\Utilities::setBackUrl(Yii::$app->request->url);
-
         $items = Article::listAll();
         if (!$items)  $items = [];
-        $pages = Article::$pages;
-        return $this->render('index', compact('items', 'pages'));
-    }
 
-
-    public function actionSearch()
-    {   
         if(Yii::$app->request->isAjax) {
             Yii::$app->response->format = 'json';
+            return $items;
+        
+        }  else {
+            \common\models\Utilities::setBackUrl(Yii::$app->request->url);
+            $pages = Article::$pages;
+            return $this->render('index', compact('items', 'pages'));
+        } 
 
-            $query = Article::find()->select('id, title');
-            
-            if($category_id = Yii::$app->request->get('category_id')) {
-                $query->andWhere(['category_id' => $category_id]);
-            }
-            if($author_id = Yii::$app->request->get('author_id')) {
-                $query->andWhere(['author_id' => $author_id]);
-            }
-            if($search = Yii::$app->request->get('search')) {
-                if(length($search) > 2) {
-                    $query->andWhere("title LIKE :search OR content LIKE :search", [':search' => "%$search%"]);
-                }
-            }
-
-            $items = $query->asArray()->all();
-            return $items ?  $items : [];
-        }
     }
 
 
