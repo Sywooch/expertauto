@@ -14,7 +14,7 @@ $this->title = 'АвтоЭкспертиза';
                            'items' => $items, 
                            'title' => 'Двигатель', 
                            'type'  => 'engine', 
-                           'num'   => 5
+                           'num'   => 4
                        ]); 
                     echo $this->render('_block_a2', [
                             'items' => $items, 
